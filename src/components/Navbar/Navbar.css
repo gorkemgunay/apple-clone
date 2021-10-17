@@ -1,0 +1,141 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  height: 2.75rem;
+  padding: 0 1.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 62.5rem;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar__menu--mobile {
+  display: none;
+}
+
+.navbar__menu span {
+  display: none;
+}
+
+.navbar__menu li,
+.navbar__menu div {
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.625rem;
+}
+
+.navbar__menu li a,
+.navbar__menu div a {
+  color: #f5f5f7;
+  font-size: 0.875rem;
+  line-height: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 48rem) {
+  .navbar.open {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #1d1d1f;
+  }
+
+  .navbar.open {
+    align-items: flex-start;
+  }
+
+  .navbar.open .navbar__menu--mobile {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    z-index: 999;
+    top: 2.8125rem;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    padding: 0 2.5rem;
+  }
+
+  .navbar.open .navbar__menu--mobile li {
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar.open .navbar__menu--mobile li:not(:last-child) {
+    border-bottom: 1px solid #d2d2d7;
+    width: 100%;
+  }
+
+  .navbar.open .navbar__menu--mobile li a {
+    color: #f5f5f7;
+    font-size: 0.875rem;
+    line-height: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__menu li {
+    display: none;
+  }
+
+  .navbar__menu span {
+    display: inline-block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+    width: 2.75rem;
+    cursor: pointer;
+    padding: 0 0.625rem;
+  }
+
+  .navbar__menu span::before,
+  .navbar__menu span::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .navbar__menu span::before {
+    transform: translateY(4px);
+  }
+
+  .navbar__menu span::after {
+    transform: translateY(-4px);
+  }
+
+  .navbar.open .navbar__menu span::before {
+    transform: rotate(45deg);
+  }
+  .navbar.open .navbar__menu span::after {
+    transform: rotate(135deg);
+  }
+}

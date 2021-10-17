@@ -1,0 +1,19 @@
+.footerInfo {
+  margin: 0 auto;
+  max-width: 61.25rem;
+  padding: 0 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.0625rem 0;
+  border-bottom: 1px solid #d2d2d7;
+}
+
+.footerInfo p {
+  font-size: 0.75rem;
+  color: #86868b;
+}
+
+.footerInfo p a {
+  color: #515154;
+}
